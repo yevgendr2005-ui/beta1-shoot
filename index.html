@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Forest Survival 3D</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
+</head>
+
+<body>
+    <div id="ui">
+        <div class="hud-panel">
+            <div>HP: <span id="health">5/5</span></div>
+            <div>Weapon: <span id="current-weapon">BLASTER (1)</span></div>
+            <div>Zombies Killed: <span id="kills">0</span></div>
+            <div>Time: <span id="timer">00:00</span></div>
+
+            <!-- Шкала стаміни -->
+            <div class="stamina-container">
+                <span>STAMINA</span>
+                <div class="stamina-bar-bg">
+                    <div id="stamina-bar"></div>
+                </div>
+            </div>
+        </div>
+        <div id="crosshair">+</div>
+    </div>
+
+    <div id="instructions">
+        <h1>DARK FOREST: SURVIVAL</h1>
+        <p>Click anywhere to enter the haunted forest</p>
+        <p><b>W A S D</b> — Move | <b>Shift</b> — Run (Sprint) | <b>Mouse</b> — Look</p>
+        <p><b>1</b> — Blaster | <b>2</b> — Fists (Melee)</p>
+        <div id="leaderboard-preview">
+            <h3>Top Survivors</h3>
+            <ul id="high-scores-list"></ul>
+        </div>
+    </div>
+
+    <div id="game-over" class="hidden">
+        <h1>YOU DIED</h1>
+        <p>The forest claimed you.</p>
+        <p>Final Score (Kills): <span id="final-score">0</span></p>
+        <p>Time Survived: <span id="final-time">00:00</span></p>
+
+        <div class="leaderboard-section">
+            <h3>Leaderboard History</h3>
+            <ul id="game-over-scores"></ul>
+        </div>
+
+        <button id="restart-btn">PLAY AGAIN</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
